@@ -14,7 +14,7 @@ func main() {
 	gracefulStop := make(chan os.Signal, 1)
 
 	log.Println("Login ")
-	err := client.Login("")
+	err := client.Login(os.Args[1])
 	if err != nil {
 		panic(err)
 	}
@@ -23,9 +23,9 @@ func main() {
 
 	log.Println("SetActivity")
 	err = client.SetActivity(client.Activity{
-		Details: "with LDPlayer 9.0",
+		Details: os.Args[2],
 		// State:      "Heyy!!!",
-		// LargeImage: "largeimageid",
+		SmallImage: "image",
 		// LargeText:  "This is the large image :D",
 		Timestamps: &client.Timestamps{Start: &tiemstamp},
 		Secrets:    &client.Secrets{},

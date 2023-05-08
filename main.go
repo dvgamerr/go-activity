@@ -24,8 +24,8 @@ func main() {
 	log.Println("SetActivity")
 	err = client.SetActivity(client.Activity{
 		Details: os.Args[2],
-		// State:      "Heyy!!!",
-		SmallImage: "image",
+		// State:      os.Args[3],
+		SmallImage: "vscode",
 		// LargeText:  "This is the large image :D",
 		Timestamps: &client.Timestamps{Start: &tiemstamp},
 		Secrets:    &client.Secrets{},
